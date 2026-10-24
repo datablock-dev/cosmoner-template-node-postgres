@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://cosmoner.com/schemas/app.schema.json
+version: 1
+name: Node and PostgreSQL
+
+services:
+  - name: web
+    type: service
+    autodeploy: true
+    envs:
+      # Create a PostgreSQL database in your project and store its connection
+      # string as a secret named DATABASE_URL before deploying.
+      - key: DATABASE_URL
+        from_secret: DATABASE_URL
